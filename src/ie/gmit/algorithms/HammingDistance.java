@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.algorithms;
 
 public class HammingDistance {
 	public int distance(String s, String t) {

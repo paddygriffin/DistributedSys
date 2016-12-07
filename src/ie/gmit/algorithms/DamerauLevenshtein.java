@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.algorithms;
 
 public class DamerauLevenshtein {
     public int distance(String s, String t) {
