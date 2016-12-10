@@ -4,51 +4,71 @@ import ie.gmit.algorithms.DamerauLevenshtein;
 import ie.gmit.algorithms.HammingDistance;
 import ie.gmit.algorithms.Levenshtein;
 
-public class AlgoComparatorImpl implements Runnable{
+public class AlgoComparatorImpl{
 
-	private String str1;
-	private String str2;
-	private String option;
+	private String s;
+	private String t;
 	private Resultator result;
+	private String algo;
 	
-	private Levenshtein ld = new Levenshtein();
+	//Initialise algorithms
+	private Levenshtein ls = new Levenshtein();
 	private HammingDistance hd = new HammingDistance();
 	private DamerauLevenshtein dl = new DamerauLevenshtein();
 	
-	public AlgoComparatorImpl(String str1, String str2,Resultator result, String option) {
-		this.str1 = str1;
-		this.str2 = str2;
+	public AlgoComparatorImpl(String s, String t, Resultator result, String algo){
+		this.s = s;
+		this.t = t;
 		this.result = result;
-		this.option = option;
-			
+		this.algo = algo;
+		
+		init();
 	}
-	
-	//Run method, essentially the main method of the runnable.
-		public void run() {
+
+	public void init() {
+		int distance;
+		
+		//Decide with string comparison algorithm to run.
+		if(algo.equalsIgnoreCase("Levenshtein Distance")){
 			
-			//Different algorithms return the result in different formats
-			int distance;
-			float distanceF;
-			String distanceS;
-			
-			//Just simulating some work here
+			distance = ls.distance(s, t);
 			try {
-				Thread.sleep(7000);
-			} catch (InterruptedException e1) {
-				e1.printStackTrace();
+				result.setResult("Levenshtein Distance is: "+distance);
+				result.setProcessed();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-			
-			//Decide with string comparison algorithm to run. The code in each selection is basically the same
-			if(option.equalsIgnoreCase("Levenshtein Distance")){
-				
-				distance = ld.distance(str1, str2);
-				try {
-					result.setResult("Levenshtein Distance is: "+distance);
-					Thread.sleep(7000);//More processing done here
-					result.setProcessed();//All done :)
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		}
+		else if(algo.equalsIgnoreCase("Hamming Distance"))
+		{
+			distance = hd.distance(s, t);
+			try {
+				result.setResult("Hamming Distance is: "+distance);
+				result.setProcessed();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		}//run
+		}
+		else if(algo.equalsIgnoreCase("Damerau-Levenshtein Distance"))
+		{
+			distance = dl.distance(s, t);
+			try {
+				result.setResult("Damerau-Levenshtein Distance: "+distance);
+				result.setProcessed();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(algo.equalsIgnoreCase("JaroWinkler Distance"))
+		{
+			distance = dl.distance(s, t);
+			try {
+				result.setResult("JaroWinkler Distance is: "+distance);
+				result.setProcessed();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
 }

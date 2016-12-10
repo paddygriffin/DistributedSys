@@ -15,7 +15,7 @@ public class Levenshtein {
         return distance[s.length()][t.length()];
     }
     
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
     	Levenshtein algo = new Levenshtein();
     	System.out.println(algo.distance("Distributed Systems", "Disturbed Systems"));
     	System.out.println(algo.distance("Distributed Systems", "Distressed Sausages"));
@@ -23,5 +23,5 @@ public class Levenshtein {
     	System.out.println(algo.distance("Distributed Systems", "Distended Cisterns"));
     	System.out.println(algo.distance("Distributed Systems", "Distempered Sisyphus"));
     	System.out.println(algo.distance("Distributed Systems", "Distilled Cistercians"));
-	}
+	}*/
 }
