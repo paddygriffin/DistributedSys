@@ -29,3 +29,13 @@ follow this tutorial and make sure you close down cmd prompts and re-open them t
 
 Once both have been started, open op a Web Browser and paste in the Url: http://localhost:8080/comparator
 
+Here is my example:
+
+![alt text](https://cloud.githubusercontent.com/assets/10612598/21084249/9997822e-bff8-11e6-9062-99fbd4edfa13.PNG "Example")
+![alt text](https://cloud.githubusercontent.com/assets/10612598/21084250/99989542-bff8-11e6-9d5f-fd0f70775f71.PNG "Example")
+
+### UML DIAGRAM
+![alt text](https://cloud.githubusercontent.com/assets/10612598/21084251/9998e0ce-bff8-11e6-83bd-33dbedbb515a.PNG "Example")
+
+
+
