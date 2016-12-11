@@ -9,18 +9,23 @@ public class ResultatorImpl extends UnicastRemoteObject implements Resultator {
 	private static final long serialVersionUID = 1L;
 	private String result;
 	private boolean processed = false;
-
+	private String s;
+	private String t;
+	
+	//Constructor
+		public ResultatorImpl() throws RemoteException{
+		}
+		
 	// constructor from UnicastRemoteObject for stubs and skeletons
-	protected ResultatorImpl() throws RemoteException {
-		this.result = null;
-		this.processed = false;
-
-	}
+		public ResultatorImpl(String str1, String str2) throws RemoteException{
+			this.s=str1;
+			this.t=str2;
+		}
 
 	// Getters and Setters
 	@Override
 	public String getResult() throws RemoteException {
-		return this.result;
+		return result;
 	}
 
 	@Override
@@ -30,7 +35,7 @@ public class ResultatorImpl extends UnicastRemoteObject implements Resultator {
 
 	@Override
 	public boolean isProcessed() throws RemoteException {
-		return this.processed;
+		return processed;
 	}
 
 	@Override

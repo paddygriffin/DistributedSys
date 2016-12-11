@@ -9,7 +9,7 @@ public class Servant {
 		
 		
 		//A string, representing the message we want to associate with our Message object
-		String myMessage = "Hello from 10.2.2.65";
+		//String myMessage = "Hello from 10.2.2.65";
 		
 		//Create an instance of the class Message and pass the string as an argument to its constructor.
 		StringService service = new StringServiceImpl();

@@ -19,7 +19,7 @@ public class StringServiceImpl extends UnicastRemoteObject implements StringServ
 		result = new ResultatorImpl();
 		
 		//Compare Strings with StringComparator
-		AlgoComparatorImpl comparator = new AlgoComparatorImpl(s, t, result, algo);
+		StringComparator comparator = new StringComparator(s, t, result, algo);
         
         //log out result
         System.out.println(result.getResult());
