@@ -1,22 +1,23 @@
 package ie.gmit.sw;
 
 public class Job {
+	private String taskNumber;
+	private String algo;
+	private String str1;
+	private String str2;
 	
 	public Job() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	private String taskNumber;
-	private String algo;
-	private String str1;
-	private String str2;
+	
 	
 	//Constructor
-	public Job(String taskNum, String algo, String str1, String str2) {
-		this.algo = algo;
-		this.str1 = str1;
-		this.str2 = str2;
+	public Job(String s, String t, String algorithm,String taskNum) {
+		this.algo = algorithm;
+		this.str1 = s;
+		this.str2 = t;
 		this.taskNumber = taskNum;
 	}
 

@@ -7,7 +7,7 @@ public class StringServiceImpl extends UnicastRemoteObject implements StringServ
 
 	
 	private static final long serialVersionUID = 1L;
-	private Resultator result;
+	//private Resultator result;
 
 	//constructor
 	protected StringServiceImpl() throws RemoteException {
@@ -16,13 +16,11 @@ public class StringServiceImpl extends UnicastRemoteObject implements StringServ
 
 	@Override
 	public Resultator compare(String s, String t, String algo) throws RemoteException {		
-		result = new ResultatorImpl();
+	Resultator result = new ResultatorImpl();
 		
 		//Compare Strings with StringComparator
-		StringComparator comparator = new StringComparator(s, t, result, algo);
-        
-        //log out result
-        System.out.println(result.getResult());
+		Thread thread = new Thread(new StringComparator(s, t, result, algo));
+        thread.start();
 
         //Returns the Resultator
 		return result;

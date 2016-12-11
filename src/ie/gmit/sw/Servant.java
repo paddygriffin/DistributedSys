@@ -19,7 +19,7 @@ public class Servant {
 		LocateRegistry.createRegistry(1099);
 		
 		//Bind our remote object to the registry with the human-readable name "howdayService"
-		Naming.rebind("howdayService", service);
+		Naming.rebind("stringservice", service);
 		
 		//Print a nice message to standard output
 		System.out.println("Server ready.");
