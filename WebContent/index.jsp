@@ -16,8 +16,7 @@
 						
 					<select name="cmbAlgorithm">
 						<option>Damerau-Levenshtein Distance</option>						
-						<option>Hamming Distance</option>						
-						<option>Jaro–Winkler Distance</option>
+						<option>Hamming Distance</option>												
 						<option selected>Levenshtein Distance</option>
 						
 					</select>	

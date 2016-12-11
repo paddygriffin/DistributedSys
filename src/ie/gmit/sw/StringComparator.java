@@ -15,7 +15,7 @@ public class StringComparator implements Runnable{
 	private Levenshtein ls = new Levenshtein();
 	private HammingDistance hd = new HammingDistance();
 	private DamerauLevenshtein dl = new DamerauLevenshtein();
-	private JaroWinkler jw = new JaroWinkler();
+	//private JaroWinkler jw = new JaroWinkler();
 	
 	public StringComparator(String str1, String str2, Resultator r, String algorithm){
 		this.s = str1;
@@ -67,7 +67,7 @@ public class StringComparator implements Runnable{
 					e.printStackTrace();
 				}
 			}
-			else if(algo.equalsIgnoreCase("JaroWinkler Distance"))
+			/*else if(algo.equalsIgnoreCase("JaroWinkler Distance"))
 			{
 				distanceD = jw.getSimilarity(s, t);
 				try {
@@ -77,7 +77,7 @@ public class StringComparator implements Runnable{
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+			}*/
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
